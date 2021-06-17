@@ -75,6 +75,23 @@
 					}
 				);
 			};
+			
+			document.addEventListener(
+				"setCustomField",
+				function(event) {
+					event.detail.customFields.forEach(function(field) {
+					
+						var setting = embedded_svc.snippetSettingsFile.extraPrechatFormDetails.find(obj => {
+						  return obj.label === field.label
+						});
+						if(setting)
+							setting.value = field.value;
+					});
+					// Fire startChat callback.
+					event.detail.callback();
+				},
+				false
+			);
 
 			if (!window.embedded_svc) {
 				var s = document.createElement('script');
