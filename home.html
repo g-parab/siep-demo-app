@@ -39,16 +39,16 @@
 				//};
 				//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 				embedded_svc.settings.prepopulatedPrechatFields = {
-					Token: Date.now()
+					Token: ('' + Date.now())
 				};
 				
 				embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [
 				  { 
-				    "label":"Username", "transcriptFields":[ "Username__c" ],
+				    "label":"Token", "transcriptFields":[ "Token__c" ],
 				  },{
-				    "label":"Cognome", "transcriptFields": ["LastName__c"]
+				    "label":"LastName", "transcriptFields": ["LastName__c"]
 				  },{
-				   "label":"Nome", "transcriptFields": ["FirstName__c"]
+				   "label":"FirstName", "transcriptFields": ["FirstName__c"]
 				  },{
 				   "label":"Email", "transcriptFields": ["Email__c"]
 				}];
