@@ -41,6 +41,18 @@
 				embedded_svc.settings.prepopulatedPrechatFields = {
 					Token: Date.now()
 				};
+				
+				embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [
+				  { 
+				    "label":"Username", "transcriptFields":[ "Username__c" ],
+				  },{
+				    "label":"Cognome", "transcriptFields": ["LastName__c"]
+				  },{
+				   "label":"Nome", "transcriptFields": ["FirstName__c"]
+				  },{
+				   "label":"Email", "transcriptFields": ["Email__c"]
+				}];
+				
 				//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 				//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
