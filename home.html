@@ -38,13 +38,13 @@
 					// Returns a valid button ID.
 				//};
 				//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-				embedded_svc.settings.prepopulatedPrechatFields = {
+				/*embedded_svc.settings.prepopulatedPrechatFields = {
 					Token: ('' + Date.now())
-				};
+				};*/
 				
 				embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [
 				  { 
-				    "label":"Token", "transcriptFields":[ "Token__c" ], "value": ('' + Date.now())
+				    "label":"Token", "transcriptFields":[ "Token__c" ]
 				  },{
 				    "label":"LastName", "transcriptFields": ["LastName__c"]
 				  },{
