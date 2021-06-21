@@ -42,13 +42,13 @@
 					Token: ('' + Date.now())
 				};*/
 				
-				embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [
+				embedded_svc.settings.extraPrechatFormDetails = [
 				  { 
 				    "label":"Token", "displayToAgent": true, "transcriptFields":[ "Token__c" ]
 				  },{
-				    "label":"Last Name", "displayToAgent": true, "transcriptFields": ["LastName__c"]
+				    "label":"LastName", "displayToAgent": true, "transcriptFields": ["LastName__c"]
 				  },{
-				   "label":"First Name", "displayToAgent": true, "transcriptFields": ["FirstName__c"]
+				   "label":"FirstName", "displayToAgent": true, "transcriptFields": ["FirstName__c"]
 				  },{
 				   "label":"Email", "displayToAgent": true, "transcriptFields": ["Email__c"]
 				}];
@@ -81,7 +81,7 @@
 				function(event) {
 					event.detail.customFields.forEach(function(field) {
 					
-						var setting = embedded_svc.snippetSettingsFile.extraPrechatFormDetails.find(obj => {
+						var setting = embedded_svc.settings.extraPrechatFormDetails.find(obj => {
 						  return obj.label === field.label
 						});
 						if(setting)
