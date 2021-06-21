@@ -43,9 +43,7 @@
 				};*/
 				
 				embedded_svc.settings.extraPrechatFormDetails = [
-				  { 
-				    "label":"Token", "displayToAgent": true, "transcriptFields":[ "Token__c" ]
-				  },{
+				  {
 				    "label":"Last Name", "displayToAgent": true, "transcriptFields": ["LastName__c"]
 				  },{
 				   "label":"First Name", "displayToAgent": true, "transcriptFields": ["FirstName__c"]
@@ -88,6 +86,9 @@
 							setting.value = field.value;
 					});
 					// Fire startChat callback.
+					embedded_svc.settings.extraPrechatFormDetails.push({
+					    "label":"Token", "displayToAgent": true, "transcriptFields": ["Token__c"], "value": ('' + Date.now())
+					  }}
 					event.detail.callback();
 				},
 				false
