@@ -46,10 +46,37 @@
 			
 			.embeddedServiceLiveAgentStateChatPlaintextMessageDefaultUI.agent.plaintextContent {
 				background-color: #FFFFFF !important;
+				border-radius: 0 !important;
+			}
+			
+			.embeddedServiceLiveAgentStateChatPlaintextMessageDefaultUI.agent.plaintextContent:before {
+				content: "";
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				border-left: 10px solid #FFFFFF;
+				border-right: 10px solid transparent;
+				border-top: 10px solid #FFFFFF;
+				border-bottom: 10px solid transparent;
+				right: -20px;
+				top: 6px;
 			}
 			
 			.embeddedServiceLiveAgentStateChatPlaintextMessageDefaultUI.chasitor.plaintextContent {
 				background-color: #000028 !important;
+				border-radius: 0 !important;
+			}
+			.embeddedServiceLiveAgentStateChatPlaintextMessageDefaultUI.chasitor.plaintextContent:before {
+				content: "";
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				border-left: 10px solid #000028;
+				border-right: 10px solid transparent;
+				border-top: 10px solid #000028;
+				border-bottom: 10px solid transparent;
+				right: -20px;
+				top: 6px;
 			}
 			
 			.sidebarHeader {
