@@ -339,9 +339,9 @@
 				},
 				false
 			);*/
-			document.onload = function(){myScript};
+			document.onload = function(){
 				register('openModal', this.handleEvent.bind(this));
-			}
+			};
 			handleEvent(messageFromEvt){
 				window.console.log('event handled ',messageFromEvt);
 				this.message = messageFromEvt ? JSON.stringify(messageFromEvt, null, '\t') : 'no message payload';
