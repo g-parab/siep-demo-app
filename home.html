@@ -342,7 +342,7 @@
 			document.onload = function(){
 				register('openModal', this.handleEvent.bind(this));
 			}
-			handleEvent(messageFromEvt){
+			var handleEvent = function(messageFromEvt){
 				window.console.log('event handled ',messageFromEvt);
 				this.message = messageFromEvt ? JSON.stringify(messageFromEvt, null, '\t') : 'no message payload';
 				var modal = document.getElementById("myModal");
