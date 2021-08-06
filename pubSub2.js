@@ -60,9 +60,9 @@ const fire = (eventName, payload) => {
 /*
     Todo: Export all the functions so that these are accisible from the other JS Classes
 */
-export default {
+/*export default {
   register,
   unregister,
   fire,
   unregisterAll
-};
+};*/
