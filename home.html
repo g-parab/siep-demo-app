@@ -293,6 +293,14 @@
 
 				embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 				embedded_svc.settings.entryFeature = 'LiveAgent';
+				
+				var handleEvent = function(messageFromEvt){
+					window.console.log('event handled ',messageFromEvt);
+					this.message = messageFromEvt ? JSON.stringify(messageFromEvt, null, '\t') : 'no message payload';
+					var modal = document.getElementById("myModal");
+					modal.style.display = "block";
+				}
+				register('openModal', this.handleEvent.bind(this));
 
 				embedded_svc.init(
 					'https://sieportal--poc.my.salesforce.com',
@@ -339,7 +347,7 @@
 				},
 				false
 			);
-			var handleEvent = function(messageFromEvt){
+			/*var handleEvent = function(messageFromEvt){
 				window.console.log('event handled ',messageFromEvt);
 				this.message = messageFromEvt ? JSON.stringify(messageFromEvt, null, '\t') : 'no message payload';
 				var modal = document.getElementById("myModal");
@@ -347,7 +355,7 @@
 			}
 			document.onload = function(){
 				register('openModal', this.handleEvent.bind(this));
-			}
+			}*/
 			
 			
 			var span = document.getElementsByClassName("close")[0];
