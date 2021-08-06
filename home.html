@@ -331,14 +331,14 @@
 				false
 			);
 			
-			/*document.addEventListener(
+			document.addEventListener(
 				"openModal",
 				function(event) {
 					var modal = document.getElementById("myModal");
 					modal.style.display = "block";
 				},
 				false
-			);*/
+			);
 			document.onload = function(){
 				register('openModal', this.handleEvent.bind(this));
 			}
