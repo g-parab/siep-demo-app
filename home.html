@@ -339,15 +339,16 @@
 				},
 				false
 			);
-			document.onload = function(){
-				register('openModal', this.handleEvent.bind(this));
-			}
 			var handleEvent = function(messageFromEvt){
 				window.console.log('event handled ',messageFromEvt);
 				this.message = messageFromEvt ? JSON.stringify(messageFromEvt, null, '\t') : 'no message payload';
 				var modal = document.getElementById("myModal");
 				modal.style.display = "block";
 			}
+			document.onload = function(){
+				register('openModal', this.handleEvent.bind(this));
+			}
+			
 			
 			var span = document.getElementsByClassName("close")[0];
 			span.onclick = function() {
