@@ -6,7 +6,9 @@
 	<body>
 		Here goes the content of your site.
 		
-		<button id="login" onclick= "login()">Login</button>
+		<button id="login" onclick= "login()">
+			<input type="hidden" value="" id="custId"/>
+			Login</button>
 		<div id="myModal" class="modal">
 
 		  <!-- Modal content -->
@@ -368,7 +370,9 @@
 			
 			let person;
 			var login = function() {
-				return {firstName:"Sanchit", lastName:"Dua", webssoId:"Z003T16K"};
+				person = {firstName:"Sanchit", lastName:"Dua", webssoId:"Z003T16K"};
+				var hidden = document.getElementById('custId'); 
+    				hidden.value = person.webssoId;
 				//logic
 			}
 
