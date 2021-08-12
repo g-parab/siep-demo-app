@@ -372,9 +372,9 @@
 			let person;
 			var login = function() {
 				person = {firstName:"Sanchit", lastName:"Dua", webssoId:"Z003T16K"};
-				// var hidden = document.getElementById('custId'); 
-    				// hidden.value = person.webssoId;
-				//logic
+				var hidden = document.getElementById('custId'); 
+    				hidden.value = JSON.stringify(person);
+				// logic
 			}
 
 			if (!window.embedded_svc) {
