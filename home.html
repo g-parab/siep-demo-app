@@ -376,6 +376,7 @@
 				var hidden = document.getElementById('custId'); 
     				hidden.value = JSON.stringify(person);
 				// logic
+				window.embedded_svc.liveAgentAPI.endChat();
 			}
 
 			if (!window.embedded_svc) {
