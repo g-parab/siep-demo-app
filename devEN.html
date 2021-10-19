@@ -1,6 +1,7 @@
 <html>
 <body>
 <style type='text/css'>
+	<button onclick='login'>Login</button>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
 		font-family: "Arial", sans-serif;
@@ -77,6 +78,10 @@
 		},
 		false
 	);
+	
+	var login = function() {
+		window.embedded_svc.liveAgentAPI.endChat();	
+	}
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
