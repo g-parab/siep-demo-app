@@ -376,14 +376,15 @@
 				var hidden = document.getElementById('custId'); 
     				hidden.value = JSON.stringify(person);
 				// logic
-				window.embedded_svc.liveAgentAPI.clearSession();
+				window.embedded_svc.liveAgentAPI.clearSession(function() {
+					document.getElementsByClassName('helpButtonEnabled')[0].click(); 
+				});
 				/*window.embedded_svc.liveAgentAPI.startChat({
 					directToAgentRouting: {
 						buttonId: "5731X000000Cas1",
 						fallback: true
 					}
 				});*/
-				document.getElementsByClassName('helpButtonEnabled')[0].click(); 
 			}
 
 			if (!window.embedded_svc) {
