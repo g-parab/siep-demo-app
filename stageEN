@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<head>
+	<body>
+		<style type='text/css'>
+			.embeddedServiceHelpButton .helpButton .uiButton {
+				background-color: #005290;
+				font-family: "Arial", sans-serif;
+			}
+			.embeddedServiceHelpButton .helpButton .uiButton:focus {
+				outline: 1px solid #005290;
+			}
+		</style>
+
+		<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+		<script type='text/javascript'>
+			var initESW = function(gslbBaseURL) {
+				embedded_svc.settings.displayHelpButton = true; //Or false
+				embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+				//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+				//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+				//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+				//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+				// Settings for Chat
+				//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+					// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+					// Returns a valid button ID.
+				//};
+				//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+				//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+				//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+				embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+				embedded_svc.settings.entryFeature = 'LiveAgent';
+
+				embedded_svc.init(
+					'https://sieportal--stage.my.salesforce.com',
+					'https://stage-sieportal.cs102.force.com/start',
+					gslbBaseURL,
+					'00D1j0000008eIR',
+					'SP_Chat_Agents_English',
+					{
+						baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+						deploymentId: '5721j0000008QRh',
+						buttonId: '5731j0000008SHr',
+						baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+						eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1j00000001JEEAY_17e4974b77c',
+						isOfflineSupportEnabled: false
+					}
+				);
+			};
+			document.addEventListener(
+						"setCustomField",
+						function(event) {
+							// Fire startChat callback.
+							embedded_svc.settings.extraPrechatFormDetails.push({
+								"label":"Token", "displayToAgent": true, "transcriptFields": ["SP_Authentication_Token__c"], "value": ('eyJhbGciOiJSUzI1NiIsImtpZCI6IkI0NjhEODMyOEY4NjdGNTgyRjNENjBGN0IzOUIwREU0MjYyQzZEOUZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InRHallNby1HZjFndlBXRDNzNXNONUNZc2JaOCJ9.eyJuYmYiOjE2MzU0ODY0NjksImV4cCI6MTYzNTQ5MDA2OSwiaXNzIjoiaHR0cHM6Ly9hcHAtc2llcGJlZXZvLWRldi13ZXUtcWEtc2llcG9ydGFsLWF1dGgtc3RhYmxlLmF6dXJld2Vic2l0ZXMubmV0IiwiYXVkIjpbImNvY2twaXQiLCJtYWlubmF2aWdhdGlvbiIsIkluZHVzdHJ5IE1hbGwiLCJtYXJrZXRpbmciLCJxdWlja2xpbmtzIiwicmVjZW50bHl2aWV3ZWQiLCJyZWNvbW1lbmRhdGlvbiIsIlNpZW1lbnMgSW5kdXN0cnkgT25saW5lIFN1cHBvcnQiLCJ1c2VycHJlZmVyZW5jZXMiXSwiY2xpZW50X2lkIjoiU2llbWVucy5TaWVQb3J0YWwuVUkiLCJzdWIiOiI2NzI4REExRjQzMUE5NEM3QTkyQjM4NzIyQzM3OTM0MDJEODNEMzZFNzgwREM5MUM5MjZENzQ3ODlFNjFEQkU2IiwiYXV0aF90aW1lIjoxNjM1NDg2NDY3LCJpZHAiOiJTYW1sMiIsInVybjpvaWQ6c3NvOmdpdmVubmFtZSI6IkFiaGlqaXQiLCJ1cm46b2lkOnNzbzpmYW1pbHluYW1lIjoiUGF3YXIiLCJ1cm46b2lkOnNzbzpzc291aWQiOiI3NTkyMTczOS04OTdFLTRFMTAtQTg5Ny03RkExOUIxRUZDNjYiLCJ1cm46b2lkOnNzbzpnaWQiOiJaMDA0RThZViIsInVybjpvaWQ6c3NvOm1haWwiOiJhYmhpaml0LnBhd2FyLmV4dEBzaWVtZW5zLmNvbSIsInJvbGUiOiJ1c2VyIiwiaW5pdGlhbHMiOiJBUCIsImxhc3QtbG9naW4iOiIyMDIxLTEwLTI5VDA1OjQ3OjQ5ICswMDowMCIsImp0aSI6IkFDOEIyRkQ1RDI4QkNEMDlCMTRFNzVDRTdGRDhFODkwIiwic2lkIjoiNTA4OTI2MDlENkE2OEM1MjU4REQ3OEUyQkQ5NTc0RkYiLCJpYXQiOjE2MzU0ODY0NjksInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiLCJsYXN0LWxvZ2luIiwiaW5pdGlhbHMiLCJ1cm46b2lkOnNzbzpmYW1pbHluYW1lIiwidXJuOm9pZDpzc286Z2l2ZW5uYW1lIiwidXNlcnByZWZlcmVuY2VzIiwicXVpY2tsaW5rcyIsImNvY2twaXQiLCJtYXJrZXRpbmciLCJyZWNlbnRseXZpZXdlZCIsIm1haW5uYXZpZ2F0aW9uIiwicmVjb21tZW5kYXRpb24iLCJtYWxsIiwic2lvcyJdLCJhbXIiOlsiZXh0ZXJuYWwiXX0.UzwlYBlPI1iBqmlMA_dfz8fsdh4FYJpmqu7guy7F0ub4vc0I0cu91_XwCu_CquzYhu9hwEY5pIKUhtEJlHAKuU5P4OmaRYv0_l6xCYiXVVWFM5CqDQ4pwEhkOgm9DCfbx7f2YNy37WbnRcsr700Ij4U5PcbsJYXe8p-noPvmnjMO_qYPfvuWAasCcqUHsVxThD70fC-IpXZjd4Qh30y5AS7kU_MAaqAKLmSpihzZjSGrXsi1_kashIwHM2twjQ1bnj3Qb5aQCyunYTRrjCLh0FzpvJ74e-yXbVITNk0uKAWZfqc1guykvtQWlL-frXWfSPYRfpYQvMqr0gO23lqYcmCssqvYSJsrjA24s8t9vZ6n6VutMAs-IF0HESvltMQsyR3-mXmAEpRcTfXYd073wYW6ByZNLjc9L_o_nb2gzW615r0hDmC0sSsTC5EmvM0q8dzPOuU06m2jDc4TlvarG2bc0FlDDWnALzRh5GxyGN4qeTDTwykKTD4ZhXKUQXpDRGYssjX3sC82WTvi6S9Y6fFfntX5jMmCffYKisNzHWV7rc-yl3RXDaiZ5abh4j8y7tRsB0Cu76BQTk6Oka-P_G0pe-GVz0eTsJBHMjdGWoQQYcXoKBJOFfUzInIo_0g_wN5MOWGEhLWIBvNusLsQQlN_Xw_TFczoSSP4BQ3yfXI')
+							 });
+							event.detail.callback();
+						},
+						false
+					);
+
+			if (!window.embedded_svc) {
+				var s = document.createElement('script');
+				s.setAttribute('src', 'https://sieportal--stage.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+				s.onload = function() {
+					initESW(null);
+				};
+				document.body.appendChild(s);
+			} else {
+				initESW('https://service.force.com');
+			}
+		</script>
+	</body>
+</html>
