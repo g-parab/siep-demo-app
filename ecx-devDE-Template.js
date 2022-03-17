@@ -1,4 +1,4 @@
-export const initChatbot = userToken => {
+
  
   // *** snippet starts here ***
   // ***************************
@@ -84,4 +84,4 @@ export const initChatbot = userToken => {
   // *************************
   // *** snippet ends here ***
  
-};
+
