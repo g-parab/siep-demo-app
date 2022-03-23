@@ -58,7 +58,7 @@
           label: 'Country',
           displayToAgent: true,
           transcriptFields: ['SP_Country__c'],
-          value: 'EN'//chatbotScriptsParameters.country
+          value: 'GB'//chatbotScriptsParameters.country
         },
         {
           label: 'Language',
