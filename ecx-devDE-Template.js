@@ -65,7 +65,7 @@
           displayToAgent: true,
           transcriptFields: ['SP_Language__c'],
           value: 'en'//chatbotScriptsParameters.language
-        }
+        });
         event.detail.callback();
     },
     false
