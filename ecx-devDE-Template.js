@@ -1,17 +1,16 @@
-
-  // *** snippet starts here ***
+// *** snippet starts here ***
   // ***************************
  
   // Example (please overwrite):
   var initESW = function (gslbBaseURL) {
     embedded_svc.settings.displayHelpButton = true; //Or false
-    embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-    //embedded_svc.settings.targetElement =  chatbotScriptsParameters.chatbotParent;
+    embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+  //  embedded_svc.settings.targetElement =  chatbotScriptsParameters.chatbotParent;
  
-    //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+    embedded_svc.settings.defaultMinimizedText = 'Chatten Sie mit einem Experten'; //(Defaults to Chat with an Expert)
     //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
  
-    //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+    embedded_svc.settings.loadingText = 'Wird geladen'; //(Defaults to Loading)
     //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
  
     // Settings for Chat
@@ -31,15 +30,15 @@
       'https://int-sieportal.cs101.force.com/start',
       gslbBaseURL,
       '00D1X0000008eG3',
-      'SP_Chat_Agents_English',
-      {
-        baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
-        deploymentId: '5721X0000004E4F',
-        buttonId: '5731X0000004DFk',
-        baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
-        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1X0000008PNpUAM_17bf3641ae3',
-        isOfflineSupportEnabled: false
-      }
+      'SP_Chat_Agents_German',
+		{
+			baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+			deploymentId: '5721X0000004E4G',
+			buttonId: '5731X0000004DFf',
+			baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+			eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1X0000008PNqUAM_17bf35e7bc7',
+			isOfflineSupportEnabled: false
+		}
     );
   };
  
@@ -58,13 +57,13 @@
           label: 'Country',
           displayToAgent: true,
           transcriptFields: ['SP_Country__c'],
-          value: 'GB'//chatbotScriptsParameters.country
+          value: 'DE'//chatbotScriptsParameters.country
         },
         {
           label: 'Language',
           displayToAgent: true,
           transcriptFields: ['SP_Language__c'],
-          value: 'en'//chatbotScriptsParameters.language
+          value: 'de'//chatbotScriptsParameters.language
         });
         event.detail.callback();
     },
@@ -85,4 +84,3 @@
  
   // *************************
   // *** snippet ends here ***
- 
