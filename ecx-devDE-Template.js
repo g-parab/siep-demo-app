@@ -6,7 +6,7 @@
   var initESW = function (gslbBaseURL) {
     embedded_svc.settings.displayHelpButton = true; //Or false
     embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-    embedded_svc.settings.targetElement =  chatbotScriptsParameters.chatbotParent;
+    //embedded_svc.settings.targetElement =  chatbotScriptsParameters.chatbotParent;
  
     //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
     //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
