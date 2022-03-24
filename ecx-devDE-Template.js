@@ -1,17 +1,17 @@
 
- // *** snippet starts here ***
+  // *** snippet starts here ***
   // ***************************
  
   // Example (please overwrite):
   var initESW = function (gslbBaseURL) {
     embedded_svc.settings.displayHelpButton = true; //Or false
-    embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+    embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
     //embedded_svc.settings.targetElement =  chatbotScriptsParameters.chatbotParent;
  
-    embedded_svc.settings.defaultMinimizedText = 'Chatten Sie mit einem Experten'; //(Defaults to Chat with an Expert)
+    //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
     //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
  
-    embedded_svc.settings.loadingText = 'Wird geladen'; //(Defaults to Loading)
+    //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
     //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
  
     // Settings for Chat
@@ -27,19 +27,19 @@
     embedded_svc.settings.entryFeature = 'LiveAgent';
  
     embedded_svc.init(
-      'https://sieportal--dev.my.salesforce.com',
-	  'https://dev-sieportal-dev.cs107.force.com/heim',
+      'https://sieportal--int.my.salesforce.com',
+      'https://int-sieportal.cs101.force.com/start',
       gslbBaseURL,
-      '00D1q0000008hJr',
-      'SP_Chat_Agents_German',
-		{
-			baseLiveAgentContentURL: 'https://c.la1-c1cs-cdg.salesforceliveagent.com/content',
-			deploymentId: '5721q00000000mx',
-			buttonId: '5731q00000002x7',
-			baseLiveAgentURL: 'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
-			eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1q0000004EP8EAM_17bb9c4cb0b',
-			isOfflineSupportEnabled: false
-		}
+      '00D1X0000008eG3',
+      'SP_Chat_Agents_English',
+      {
+        baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+        deploymentId: '5721X0000004E4F',
+        buttonId: '5731X0000004DFk',
+        baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1X0000008PNpUAM_17bf3641ae3',
+        isOfflineSupportEnabled: false
+      }
     );
   };
  
@@ -52,19 +52,19 @@
           label: 'Token',
           displayToAgent: false,
           transcriptFields: ['SP_Authentication_Token__c'],
-          value: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkI0NjhEODMyOEY4NjdGNTgyRjNENjBGN0IzOUIwREU0MjYyQzZEOUZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InRHallNby1HZjFndlBXRDNzNXNONUNZc2JaOCJ9.eyJuYmYiOjE2NDgwMzMzOTgsImV4cCI6MTY0ODAzNjk5OCwiaXNzIjoiaHR0cHM6Ly9hdXRoLnNpZXBvcnRhbGludGVncmF0aW9uLnNpZW1lbnMuY29tIiwiYXVkIjpbIkluZHVzdHJ5IE1hbGwiLCJjb2NrcGl0IiwiU2llbWVucyBJbmR1c3RyeSBPbmxpbmUgU3VwcG9ydCIsInJlY2VudGx5dmlld2VkIiwibWFya2V0aW5nIiwicXVpY2tsaW5rcyIsInVzZXJwcmVmZXJlbmNlcyIsIm1haW5uYXZpZ2F0aW9uIiwicmVjb21tZW5kYXRpb24iXSwiY2xpZW50X2lkIjoiU2llbWVucy5TaWVQb3J0YWwuVUkiLCJzdWIiOiJDQkIwMDUyNDhERjlFMkZBQjA4QkU2ODZFN0JERTc4QTJERkZEQjRBQUNENjEzQjM2NzQ5NkIxMzQ3RkFGNTdDIiwiYXV0aF90aW1lIjoxNjQ4MDMzMzk2LCJpZHAiOiJTYW1sMiIsInVybjpvaWQ6c3NvOmdpdmVubmFtZSI6IkNoYXQiLCJ1cm46b2lkOnNzbzpzaW9zcHQiOiJ0cnVlIiwidXJuOm9pZDpzc286bWFpbCI6InNpZXBvcnRhbC10ZXN0dGVhbS5pdEBzaWVtZW5zLmNvbSIsInVybjpvaWQ6c3NvOnNzb3VpZCI6IjE5NUE5RjA4LTgxMEUtNDUyNi05MkM1LTNDODg1MEU3NTBFMSIsInVybjpvaWQ6c3NvOmNyZWQiOiJTaWVwX0IwX0NoYXRfMDIiLCJ1cm46b2lkOnNzbzpmYW1pbHluYW1lIjoiQm90MDIiLCJyb2xlIjoidXNlciIsImluaXRpYWxzIjoiQ0IiLCJsYXN0LWxvZ2luIjoiMjAyMi0wMy0yM1QxMTowMzoxOCArMDA6MDAiLCJqdGkiOiI4RDU5MEIyQTdFMjkxMEM5RDVCOTExRkIzNDM4NURDRCIsInNpZCI6IkQzRkRFMENFQUU1RTRFNTkwMUM2MkZFOEE3QTczQUFEIiwiaWF0IjoxNjQ4MDMzMzk4LCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwibGFzdC1sb2dpbiIsImluaXRpYWxzIiwidXJuOm9pZDpzc286ZmFtaWx5bmFtZSIsInVybjpvaWQ6c3NvOmdpdmVubmFtZSIsInVzZXJwcmVmZXJlbmNlcyIsInF1aWNrbGlua3MiLCJjb2NrcGl0IiwibWFya2V0aW5nIiwicmVjZW50bHl2aWV3ZWQiLCJtYWlubmF2aWdhdGlvbiIsInJlY29tbWVuZGF0aW9uIiwibWFsbCIsInNpb3MiXSwiYW1yIjpbImV4dGVybmFsIl19.qlSGV8RgkkZS4t96NWmTv_HiIzv4IC4j9I7g1Cs_cPiwiNAmjZ7f-y4P-LwrzgryH6bS3Y4_GcKSxX_KK3L9c6TDDA8LElHXCYF-bD6yJyvOOeH-q5DRW4lGjAmMmDNogdnCqOBx1drUPQAt_kWcn5adyRXpvN5aEyQHjdBsblaiKVO3myTCys9KKrnCOXaE7V0iVxQHevfr1Xs0qYtuQYhhwIVR63wKt6rNq8G1gJOIA-ROBGpKCRXkHa3iW68vYl53A25TyRuR4ck8cOHtY7y8wTNbIco1vbrT_gEShqxeMIIJhbxpV3pm4-dFzqGJ9uwUOVKZzx_zFtgDEApzoIJjDebnqD4sY-43TnvRCPPIARaaWWka2zCVMApoH6trctcRDFAl4A6fUEbJ0uwIGY2LkuqOGIIjIBVvzqlj5kk6f6jKTr3iPdLGR5WYGV0yW9-H_vGzOayd2qKEtnUq4ZMQIuJJHb_ITRs9-bLG_JWqiW9cLbr488fkh3e4TgHju9-vgGGZxtvYhUied-8H-R8JCZhLKjMM82R4ERhXKcilX01RhI72dqjQq6AQH2vu-dvwYuJMsEDwt6zxTHg3fJX_KCSogEz2czspb9Pe48vXLG0Dp4cgDQukFctW5F0IXDA6HyCtC6cZhF2we9w2Ikex3n_V5fDquSEwd_dOWIo'//chatbotScriptsParameters.token
+          value: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkI0NjhEODMyOEY4NjdGNTgyRjNENjBGN0IzOUIwREU0MjYyQzZEOUZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InRHallNby1HZjFndlBXRDNzNXNONUNZc2JaOCJ9.eyJuYmYiOjE2NDcyNjc0ODksImV4cCI6MTY0NzI3MTA4OSwiaXNzIjoiaHR0cHM6Ly9hdXRoLnNpZXBvcnRhbGludGVncmF0aW9uLnNpZW1lbnMuY29tIiwiYXVkIjpbIkluZHVzdHJ5IE1hbGwiLCJjb2NrcGl0IiwiU2llbWVucyBJbmR1c3RyeSBPbmxpbmUgU3VwcG9ydCIsInJlY2VudGx5dmlld2VkIiwibWFya2V0aW5nIiwicXVpY2tsaW5rcyIsInVzZXJwcmVmZXJlbmNlcyIsIm1haW5uYXZpZ2F0aW9uIiwicmVjb21tZW5kYXRpb24iXSwiY2xpZW50X2lkIjoiU2llbWVucy5TaWVQb3J0YWwuVUkiLCJzdWIiOiJDQTc5NTFGQkExQkQwMzYxMDE1QjE5MEVERDM3NjJEQzI2OEU0QUJFOTkwNkQ2ODMzMDEyNTg5NzVBOTczNkFFIiwiYXV0aF90aW1lIjoxNjQ3MjY3MjM0LCJpZHAiOiJTYW1sMiIsInVybjpvaWQ6c3NvOm1haWwiOiJzaWVwb3J0YWwtdGVzdHRlYW0uaXRAc2llbWVucy5jb20iLCJ1cm46b2lkOnNzbzpzaW9zcHQiOiJ0cnVlIiwidXJuOm9pZDpzc286Z2l2ZW5uYW1lIjoiQ2hhdCIsInVybjpvaWQ6c3NvOmZhbWlseW5hbWUiOiJCb3QwMiIsInVybjpvaWQ6c3NvOmNyZWQiOiJTaWVwX0IwX0NoYXRfMDIiLCJ1cm46b2lkOnNzbzpzc291aWQiOiIxOTVBOUYwOC04MTBFLTQ1MjYtOTJDNS0zQzg4NTBFNzUwRTEiLCJyb2xlIjoidXNlciIsImluaXRpYWxzIjoiQ0IiLCJsYXN0LWxvZ2luIjoiMjAyMi0wMy0xNFQxNDoxODowOSArMDA6MDAiLCJqdGkiOiI1NDhDMENFMzBCRDgyOEE5RkM1RTREMjE2RjE1QUIwRiIsInNpZCI6IjNGMjJBRTU3NTEzMDZCRjU2MkVGOENGMjlFRDQ1MUUzIiwiaWF0IjoxNjQ3MjY3NDg5LCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwibGFzdC1sb2dpbiIsImluaXRpYWxzIiwidXJuOm9pZDpzc286ZmFtaWx5bmFtZSIsInVybjpvaWQ6c3NvOmdpdmVubmFtZSIsInVzZXJwcmVmZXJlbmNlcyIsInF1aWNrbGlua3MiLCJjb2NrcGl0IiwibWFya2V0aW5nIiwicmVjZW50bHl2aWV3ZWQiLCJtYWlubmF2aWdhdGlvbiIsInJlY29tbWVuZGF0aW9uIiwibWFsbCIsInNpb3MiXSwiYW1yIjpbImV4dGVybmFsIl19.fXcGC0dkdD3t2xdE5cCKXHE9tDFXNniv8OYV1RXuBAYzAGxO9r0WMEcLGJ21hdCoa2PUtnaWABP6Wo17RNIZZ08nGW6zlWztJkymlNnzPrKWoonQnPX8A2L627nmfpXn2QIOoIImy1oYTZ_05Hwel7mMqJu75VWNLhoLqsOn7LF9esvvBXkFXAVS0xWxO4f5hvT8v20LX39BUlFGul4JxiiAxRq-_byJBfDj-Ee-NmLvo8nnQ6YRaK_MBBppQ_gXQGGHflOwDah7bffJNoatyHcjWid8Rf3nYcOIPGO0Z9SxoHNujG0OqeXNk_ohJiG4s3wxMRLLihzKQr7jRfgpBCWc0mPzNJ8t0qEPKCSdnqdJT7wuQHWKNpXBwpamVb1DaLlT4MFmS0afadkDgBq_ySuTUgxGpTvKCo6H3d27xLX2xRfY94LlPDmSyJhsxax0ju14ij0nemOWU3UkRPAhyvMS1JdIRP52eozEI2DSN0nTgP01qfkVf_AHAVc6ZtvM3W81eW93E3WwnpMYm1FkojbuEaL4rwmj6Azjvh5eciePh8Y83pK2jwMbePG9OvWNVvMjGLu_cu5KKdkk8X9e2hA4FWvnFPlk-XXBP1aNb-KEQOKj1Ab-cQnkbeY77wjeW47wmdqKkVKOW70nGDOkTipKIrDunR60GmIGkZopaT4'//chatbotScriptsParameters.token
         },
         {
           label: 'Country',
           displayToAgent: true,
           transcriptFields: ['SP_Country__c'],
-          value: 'DE'//chatbotScriptsParameters.country
+          value: 'GB'//chatbotScriptsParameters.country
         },
         {
           label: 'Language',
           displayToAgent: true,
           transcriptFields: ['SP_Language__c'],
-          value: 'de'//chatbotScriptsParameters.language
+          value: 'en'//chatbotScriptsParameters.language
         });
         event.detail.callback();
     },
@@ -73,7 +73,7 @@
  
   if (!window.embedded_svc) {
     var s = document.createElement('script');
-    s.setAttribute('src', 'https://sieportal--dev.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+    s.setAttribute('src', 'https://sieportal--int.my.salesforce.com/embeddedservice/5.0/esw.min.js');
     s.onload = function () {
       initESW(null);
     };
@@ -85,3 +85,4 @@
  
   // *************************
   // *** snippet ends here ***
+ 
