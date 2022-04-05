@@ -4,13 +4,13 @@
   // Example (please overwrite):
   var initESW = function (gslbBaseURL) {
     embedded_svc.settings.displayHelpButton = true; //Or false
-    embedded_svc.settings.language = 'de'; //For example, enter 'en' or 'en-US'
+    embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
     //embedded_svc.settings.targetElement =  chatbotScriptsParameters.chatbotParent;
  
-    embedded_svc.settings.defaultMinimizedText = 'Chatten Sie mit einem Experten'; //(Defaults to Chat with an Expert)
+    //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
     //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
  
-    embedded_svc.settings.loadingText = 'Wird geladen'; //(Defaults to Loading)
+    //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
     //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
  
     // Settings for Chat
@@ -30,15 +30,15 @@
 	  'https://stage-sieportal.cs102.force.com/start',
       gslbBaseURL,
       '00D1j0000008eIR',
-      'SP_Chat_Agents_German',
-		{
-			baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
-			deploymentId: '5721j0000008QRi',
-			buttonId: '5731j0000008SHw',
-			baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
-			eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1j00000001JFEAY_17e496d098b',
-			isOfflineSupportEnabled: false
-		}
+      'SP_Chat_Agents_English',
+      {
+        baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+		deploymentId: '5721j0000008QRh',
+		buttonId: '5731j0000008SHr',
+		baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+		eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1j00000001JEEAY_17e4974b77c',
+		isOfflineSupportEnabled: false
+      }
     );
   };
  
@@ -57,13 +57,13 @@
           label: 'Country',
           displayToAgent: true,
           transcriptFields: ['SP_Country__c'],
-          value: 'DE'//chatbotScriptsParameters.country
+          value: 'GB'//chatbotScriptsParameters.country
         },
         {
           label: 'Language',
           displayToAgent: true,
           transcriptFields: ['SP_Language__c'],
-          value: 'de'//chatbotScriptsParameters.language
+          value: 'en'//chatbotScriptsParameters.language
         });
         event.detail.callback();
     },
