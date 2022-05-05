@@ -1,2 +1,15 @@
-<embed type="text/html" src="devEN.html">
-<embed type="text/html" src="devDE.html">
+<html>
+  <select name="language" id="language" onChange="handleLanguage()">
+    <option value="English">English</option>
+    <option value="German">German</option>
+  </select>
+  <embed type="text/html" src="devEN.html" id="ENBot">
+  <embed type="text/html" src="devDE.html" id="DEBot">
+  <script type='text/javascript'>
+    var handleLanguage = function() {
+      var lang = document.getElementById('language').value();
+    }
+    
+  </script>
+  
+<html>
